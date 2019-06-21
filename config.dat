@@ -1,0 +1,6 @@
+Opt_name=Options
+Sender E-mail=Display Name <test@tester.com>
+User Name=username@mail.com
+Password=password
+SMTP Server=mail.server.com
+SMTP Port=557
