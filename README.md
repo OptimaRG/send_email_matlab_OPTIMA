@@ -13,7 +13,7 @@
       - If there are multiply adress use cell array ({'mail_1','mail_2',......}).
       - If there is only one adress use string ('test@mail.com').
     - **header**: Header of e-mail.
-    - *content*: Content of e-mail.
+    - **content**: Content of e-mail.
     - **variable** : Variable that u want to send as attach.mat (optional- if u dont use send without attach)
 
 ### Output Variables:
