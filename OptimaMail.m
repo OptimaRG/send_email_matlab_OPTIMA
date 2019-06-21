@@ -1,4 +1,4 @@
-%% Ýbrahim Özþeker - 21.06.2019
+%% Ibrahim Ozseker - 21.06.2019
 %% Mail send function created for OPTIMA Lab.
 % mail_list: {'mail_1','mail_2',......}  or 'mail_adress'
 %
