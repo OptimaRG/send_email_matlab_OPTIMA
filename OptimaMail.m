@@ -37,6 +37,7 @@ if isfile(configFile)
                 sendmail(mail_list,header,content);
             else
                 save('attach.mat','variable');
+                content=[content,' ',evalc('variable')];
                 sendmail(mail_list,header,content,'attach.mat');
             end
             check=true;
