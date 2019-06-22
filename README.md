@@ -15,7 +15,7 @@ User can send email with a varible (optional). Variable output also can add cont
     - **header:** Header of e-mail.
     - **content:** Content of e-mail.
     - **variable:**  Variable that u want to send as attach.mat (optional- if u dont use send without attach)
-    - **addcontent:"" True-Add , False - Only send as attachment. 
+    - **addcontent:** True-Add , False - Only send as attachment. 
 ### Output Variables:
 
 Function return logical true or false.
