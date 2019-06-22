@@ -8,11 +8,15 @@
 %
 % variable: Variable that u want attach to mail.
 
+% addcontent: True-Add , False - Only send as attachment. default-True
+
 %% Function
 
-function check=OptimaMail(mail_list,header,content,variable)
+function check=OptimaMail(mail_list,header,content,variable,addcontent)
 check=false;
-configFile='config.dat';
+[filePath, ~, ~] = fileparts(mfilename('fullpath'));
+configFile=[filePath,'/config.dat'];
+temp=tempdir;
 if isfile(configFile)
     config=readtable('config.dat','Delimiter','=','ReadVariableNames',true);
     email=config.Options{1};
@@ -36,12 +40,17 @@ if isfile(configFile)
             if (nargin < 4)
                 sendmail(mail_list,header,content);
             else
-                save('attach.mat','variable');
-                content=[content,' ',evalc('variable')];
-                sendmail(mail_list,header,content,'attach.mat');
+                if (nargin <5)
+                    addcontent=true;
+                end
+                attachPath=[temp,'attach.mat'];
+                save(attachPath,'variable');
+                if (addcontent)
+                    msg=[content,' ',evalc('variable')];
+                end
+                sendmail(mail_list,header,msg,attachPath);
             end
             check=true;
-            delete attach.mat
             disp('Mail Sent')
             break;
         catch
